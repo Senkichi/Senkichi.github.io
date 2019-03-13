@@ -1,51 +1,41 @@
-<!DOCTYPE html>
+{% extends "layout.html" %}
+{% block dropdown %}
 
-<html lang="en-us">
 
-<head>
-  <meta charset="UTF-8">
-  <title>Home</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-</head>
+{% endblock dropdown %}
 
-<body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="index.html">Home</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class='nav-item'>
-          <a class='nav link' href='writing.html'>Writing<a/></li>
-        <li class='nav-item'>
-          <a class='nav link' href="comp.html">Comparison</a></li>
-        <li class='nav-item'>
-          <a class='nav link' href="data.html">Data</a></li>
-      </ul>
-    </div>
-    <!-- <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle Navigation</span>
-      </button>
+{% block content %}
 
+	<div class = "d-flex justify-content-center align-items-center container text-center">
+		<div class = "col-xs-6">
+			<label for="year" class="text-center">Select Year</label>
+      <select id="year" class="form-control form-control-lg">
+        <option value="2016" selected="selected">2016</option>
+        <option value="2015">2015</option>
+        <option value="2014">2014</option>
+        <option value="2013">2013</option>
+        <option value="2012">2012</option>
+        <option value="2011">2011</option>
+        <option value="2010">2010</option>
+        <option value="2009">2009</option>
+      </select>
       </div>
+		<div class = "col-xs-6">
+			<label for="dataType">Select Map Type</label>
+      <select id="dataType" class="form-control form-control-lg">
+        <option value="IN" selected="selected">Migration In-Flow</option>
+        <option value="OUT">Migration Out-Flow</option>
+        <option value="NET">Net Migration</option>
+        <option value="MED_INC">Median List Price</option>
+        <option value="RENT">Average Rent</option>
+      </select>
+	</div>
+	</div>
+   </form>
 
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="navbar-nav">
-          <li class='nav-item'>
-            <a class='nav link' href='writing.html'>Writing<a/></li>
-          <li class='nav-item'>
-            <a class='nav link' href="comp.html">Comparison</a></li>
-          <li class='nav-item'>
-            <a class='nav link' href="data.html">Data</a></li>
-        </ul>
-      </div>
-    </div> -->
-  </nav>
-</body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-</html>
+  <div id="map-holder">
+		<div class="container fill">
+		<div id="map"></div>
+		</div>
+	</div>
+{% endblock content %}
